@@ -6,26 +6,27 @@ Custom keywords in JavaScript!
 ## Create your keywords:
 Just define a handler function and a maximum number of arguments:
 ```js
-const keywords = {
-  "print": {
-    func: msg => console.log("PRINT: " + msg),
-    maxArgs: 1
-  }
+const my_keywords = {
+  print:  msg =>            console.log("PRINT: " + msg),
+  split:  (text, char) =>   console.log(text.split(char)),
+  add:    (a, b, c, d) =>   console.log(a + b + c + d)
 }
 ```
 
 ## Then, use them in a `with` block:
 ```js
-const useKeywords = require("./proxy");
 with (useKeywords(keywords)) {
-  print, V("Hello world");
+  print, sHelloworld
 }
 ```
-This code outputs `PRINT: Hello world` to the console.
 
-**Note:** To supply arguments, you need to use the `V` function. Multiple arguments can be passed like so:
+**Params:**
+only number or string supported for now.
+1. n<number>
+2. s<string>
+   
 ```js
 with (proxy) {
-  someKeyword, V("One"), V("Two"), V("Three");
+  add, n10, n30, n5, n8
 }
 ```
