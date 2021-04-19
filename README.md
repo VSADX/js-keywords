@@ -22,8 +22,8 @@ with (useKeywords(keywords)) {
 
 **Params:**
 only number or string supported for now.
-1. n<number>
-2. s<string>
+1. `n<number>` ex: `n1002` becomes `1002`
+2. `s<string>` ex: `sBlue` becomes `"Blue"`
    
 ```js
 with (proxy) {
